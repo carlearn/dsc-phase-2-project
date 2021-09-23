@@ -1,14 +1,10 @@
 # Phase 2 Project
 
-Another module down--you're almost half way there!
-
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-2-project-campus/master/halfway-there.gif)
-
-All that remains in Phase 2 is to put our newfound data science skills to use with a large project! This project should take 20 to 30 hours to complete.
 
 ## Project Overview
 
-For this project, you will use regression modeling to analyze house sales in a northwestern county.
+This project analyzes 2014-2015 the King County house sales data for a local real estate agency that helps potential homeowners to sell their homes. The analysis will follow Cross-Industry Standard Process for Data Mining (CRISP-DM). Based on the validated model and exploratory analysis, the real estate agency will provide useful advice to their clients about what factors determine the sale price.
+
 
 ### The Data
 
@@ -29,9 +25,10 @@ It is up to you to decide what data from this dataset to use and how to use it. 
 
 ### Business Problem
 
-It is up to you to define a stakeholder and business problem appropriate to this dataset.
+Local real estate agents usually face such questions from their clients as: whether home renovations increase the value of houses, and by what amount; whether a view of waterfront increases the house sale price; and etc.
 
-If you are struggling to define a stakeholder, we recommend you complete a project for a real estate agency that helps homeowners buy and/or sell homes. A business problem you could focus on for this stakeholder is the need to provide advice to homeowners about how home renovations might increase the estimated value of their homes, and by what amount.
+Upon analyzing the King County house sales data, we will help local real estate angency to answer the questions from their clients, i.e. homeowners. We will help figure out what are the key features that determine the sale price of houses, and by what amount.
+
 
 ## Deliverables
 
@@ -41,26 +38,43 @@ There are three deliverables for this project:
 * A **Jupyter Notebook**
 * A **non-technical presentation**
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
 
-### Key Points
+## Methodology
 
-* **Your deliverables should explicitly address each step of the data science process.** Refer to [the Data Science Process lesson](https://github.com/learn-co-curriculum/dsc-data-science-processes) from Topic 19 for more information about process models you can use.
+* Check missing values and convert datatypes
 
-* **Your Jupyter Notebook should demonstrate an iterative approach to modeling.** This means that you begin with a basic model, evaluate it, and then provide justification for and proceed to a new model. After you finish refining your models, you should provide 1-3 paragraphs discussing your final model - this should include interpreting at least 3 important parameter estimates or statistics.
+* Check Four Assumptions associated with a Linear Regression Model：
 
-* **Based on the results of your models, your notebook and presentation should discuss at least two features that have strong relationships with housing prices.**
+Before modeling, we will check the linearity and multicollinearity here.
+At the same time, we will investigate the the relationship between our target: price and the predictors by data visualization. We will also remove outliers from the skewed data.
 
-## Getting Started
+* One-Hot Encoding on Categorical Data
 
-Start on this project by forking and cloning [this project repository](https://github.com/learn-co-curriculum/dsc-phase-2-project) to get a local copy of the dataset.
+* Modeling:
 
-We recommend structuring your project repository similar to the structure in [the Phase 1 Project Template](https://github.com/learn-co-curriculum/dsc-project-template). You can do this either by creating a new fork of that repository to work in or by building a new repository from scratch that mimics that structure.
+1. Split Data into Training and Test Sets
+2. Build Models with OLS results
+3. Check Normality and Homoscedasticity Assumptions
+4. Validate Each Model by Calculating RMSE
 
-## Project Submission and Review
+* Models:
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
+1. Baseline Model
+2. Model 1: remove uninfluential features by stepwise selection with p-values
+3. Model 2: scale the predictors based on Baseline Model
+
 
 ## Summary
 
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+### Conclusion
+The top features to determine the value of houses are:
+1. Grade: overall grade given to the housing unit, based on King County grading system
+2. Square footage of the house and its nearest 15 neighbors
+3. Square footage of lot and its nearest 15 neighbors
+4. Waterfront: whether the house has a view to a waterfront
+
+### Next Step
+1. More sales data:
+2. Further analysis on age of the house
+3. Further analysis on renovation
+4. Analyze the zipcode/location feature
