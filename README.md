@@ -23,6 +23,7 @@ It is up to you to decide what data from this dataset to use and how to use it. 
 * sqft_living15
 * sqft_lot15
 
+
 ### Business Problem
 
 Local real estate agents usually face such questions from their clients as: whether home renovations increase the value of houses, and by what amount; whether a view of waterfront increases the house sale price; and etc.
@@ -65,6 +66,13 @@ At the same time, we will investigate the the relationship between our target: p
 
 
 ## Summary
+
+### Results
+
+![Module Results Comparison Table](https://github.com/carlearn/dsc-phase-2-project/blob/main/images/Module%20Results%20Comparison%20Table.png)
+
+![Relationship](https://github.com/carlearn/dsc-phase-2-project/blob/main/images/Relationship.png)
+
 
 ### Conclusion
 The top features to determine the value of houses are:
